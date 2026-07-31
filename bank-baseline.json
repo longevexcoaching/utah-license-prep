@@ -1,7 +1,6 @@
 {
   "b100": {
     "bad_answer_index": 0,
-    "braces_balanced": true,
     "decoded_bytes": 58934,
     "domains": {
       "Business Organization": 6,
@@ -19,6 +18,7 @@
     "duplicate_questions": 0,
     "empty_explanation": 0,
     "empty_reference": 0,
+    "malformed_reason": "",
     "orphan_domains": [],
     "questions": 82,
     "title": "B100 Contractor",
@@ -35,11 +35,11 @@
       "Risk Management",
       "Safety",
       "Tax Laws"
-    ]
+    ],
+    "well_formed": true
   },
   "nec": {
     "bad_answer_index": 0,
-    "braces_balanced": true,
     "decoded_bytes": 50946,
     "domains": {
       "Boxes & Conduit Fill": 5,
@@ -56,6 +56,7 @@
     "duplicate_questions": 0,
     "empty_explanation": 0,
     "empty_reference": 0,
+    "malformed_reason": "",
     "orphan_domains": [],
     "questions": 55,
     "title": "Utah NEC Code",
@@ -71,11 +72,11 @@
       "Overcurrent Protection",
       "Services & Disconnects",
       "Wiring Methods"
-    ]
+    ],
+    "well_formed": true
   },
   "resj": {
     "bad_answer_index": 0,
-    "braces_balanced": true,
     "decoded_bytes": 74166,
     "domains": {
       "Conductors & Cables": 7,
@@ -96,6 +97,7 @@
     "duplicate_questions": 0,
     "empty_explanation": 0,
     "empty_reference": 0,
+    "malformed_reason": "",
     "orphan_domains": [],
     "questions": 119,
     "title": "Residential Journeyman",
@@ -115,34 +117,37 @@
       "State Laws & Rules",
       "Voltage",
       "Voltage Drop"
-    ]
+    ],
+    "well_formed": true
   },
   "snap": {
     "bad_answer_index": 0,
-    "braces_balanced": true,
     "decoded_bytes": 7370,
     "domains": {},
     "duplicate_questions": 0,
     "empty_explanation": 0,
     "empty_reference": 0,
+    "malformed_reason": "",
     "orphan_domains": [],
     "questions": 0,
     "title": "Snap & Solve",
     "too_few_options": 0,
-    "weights": []
+    "weights": [],
+    "well_formed": true
   },
   "theory": {
     "bad_answer_index": 0,
-    "braces_balanced": true,
     "decoded_bytes": 21710,
     "domains": {},
     "duplicate_questions": 0,
     "empty_explanation": 0,
     "empty_reference": 0,
+    "malformed_reason": "",
     "orphan_domains": [],
     "questions": 0,
     "title": "Theory From Zero",
     "too_few_options": 0,
-    "weights": []
+    "weights": [],
+    "well_formed": true
   }
 }

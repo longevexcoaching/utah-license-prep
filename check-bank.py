@@ -147,25 +147,26 @@ def parse_weights(js):
     return re.findall(r'"([^"]+)"\s*:', m.group(1))
 
 
-def braces_balanced(js):
-    depth, instr, quote, esc = 0, False, "", False
-    for c in js:
-        if instr:
-            if esc:
-                esc = False
-            elif c == "\\":
-                esc = True
-            elif c == quote:
-                instr = False
-        elif c in "\"'":
-            instr, quote = True, c
-        elif c == "{":
-            depth += 1
-        elif c == "}":
-            depth -= 1
-            if depth < 0:
-                return False
-    return depth == 0
+def well_formed(js):
+    """Detect a truncated or corrupted payload.
+
+    This replaced an earlier brace-balance check, which was removed for producing
+    false positives: a regex literal containing a quote -- e.g. /[&<>"]/g -- reads
+    as an opening string to any scanner that doesn't implement JS's regex-vs-division
+    disambiguation, and every brace after it is miscounted. That fired on valid code
+    that `node --check` passed. Document completeness catches the same truncation
+    class with no such ambiguity.
+    """
+    head = js.lstrip()[:200].lower()
+    if not (head.startswith("<!doctype") or head.startswith("<html")):
+        return False, "does not start with a doctype or <html>"
+    tail = js.rstrip().lower()
+    if not tail.endswith("</html>"):
+        return False, "does not end with </html> (payload truncated?)"
+    for tag in ("</body>", "</script>"):
+        if tag not in tail:
+            return False, f"missing {tag}"
+    return True, ""
 
 
 # ---------------------------------------------------------------- survey
@@ -184,6 +185,7 @@ def survey():
         js = decode_app(name, b64)
         qs = parse_questions(js)
         weights = parse_weights(js)
+        ok, why = well_formed(js)
         domains = {}
         for q in qs:
             domains[q["d"]] = domains.get(q["d"], 0) + 1
@@ -193,7 +195,8 @@ def survey():
             "questions": len(qs),
             "domains": domains,
             "weights": sorted(weights),
-            "braces_balanced": braces_balanced(js),
+            "well_formed": ok,
+            "malformed_reason": why,
             "orphan_domains": sorted(set(domains) - set(weights)) if weights else [],
             "bad_answer_index": sum(1 for q in qs if not (0 <= q["a"] < q["o"])),
             "too_few_options": sum(1 for q in qs if q["o"] < 2),
@@ -220,8 +223,8 @@ def compare(now, base):
         n, b = now[name], base[name]
         tag = f"[{name}]"
 
-        if not n["braces_balanced"]:
-            fails.append(f"{tag} braces are UNBALANCED in the decoded sub-app")
+        if not n["well_formed"]:
+            fails.append(f"{tag} decoded sub-app is MALFORMED: {n['malformed_reason']}")
 
         if n["questions"] < b["questions"]:
             fails.append(f"{tag} questions DROPPED {b['questions']} -> {n['questions']}")
