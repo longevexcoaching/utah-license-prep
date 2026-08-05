@@ -1,0 +1,7 @@
+# This repo is PUBLIC - it serves the study app via GitHub Pages.
+# Never commit anything here that is not meant to be world-readable.
+# The Gemini key the Snap & Solve tool uses lives in the browser's localStorage
+# only, entered by the user at runtime. It must never appear in this file tree.
+
+# Local backups of index.html taken before edits - 300 KB each, no reason to ship.
+*.bak-*
