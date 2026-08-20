@@ -1,16 +1,16 @@
 {
   "b100": {
     "bad_answer_index": 0,
-    "decoded_bytes": 78908,
+    "decoded_bytes": 93085,
     "domains": {
-      "Business Organization": 6,
+      "Business Organization": 14,
       "Contract Management": 8,
       "Estimating & Bidding": 8,
       "Financial Management": 8,
       "Labor Laws": 7,
-      "Licensing": 19,
+      "Licensing": 25,
       "Lien Laws": 12,
-      "Project Management": 14,
+      "Project Management": 20,
       "Risk Management": 14,
       "Safety": 6,
       "Tax Laws": 14
@@ -20,7 +20,7 @@
     "empty_reference": 0,
     "malformed_reason": "",
     "orphan_domains": [],
-    "questions": 116,
+    "questions": 136,
     "title": "B100 Contractor",
     "too_few_options": 0,
     "weights": [
