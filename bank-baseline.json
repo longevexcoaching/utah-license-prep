@@ -1,26 +1,26 @@
 {
   "b100": {
     "bad_answer_index": 0,
-    "decoded_bytes": 58934,
+    "decoded_bytes": 78908,
     "domains": {
       "Business Organization": 6,
       "Contract Management": 8,
       "Estimating & Bidding": 8,
       "Financial Management": 8,
       "Labor Laws": 7,
-      "Licensing": 12,
-      "Lien Laws": 6,
-      "Project Management": 7,
-      "Risk Management": 7,
+      "Licensing": 19,
+      "Lien Laws": 12,
+      "Project Management": 14,
+      "Risk Management": 14,
       "Safety": 6,
-      "Tax Laws": 7
+      "Tax Laws": 14
     },
     "duplicate_questions": 0,
     "empty_explanation": 0,
     "empty_reference": 0,
     "malformed_reason": "",
     "orphan_domains": [],
-    "questions": 82,
+    "questions": 116,
     "title": "B100 Contractor",
     "too_few_options": 0,
     "weights": [
@@ -77,7 +77,7 @@
   },
   "resj": {
     "bad_answer_index": 0,
-    "decoded_bytes": 74166,
+    "decoded_bytes": 75128,
     "domains": {
       "Conductors & Cables": 7,
       "Current": 6,
@@ -122,7 +122,7 @@
   },
   "snap": {
     "bad_answer_index": 0,
-    "decoded_bytes": 7370,
+    "decoded_bytes": 24063,
     "domains": {},
     "duplicate_questions": 0,
     "empty_explanation": 0,
