@@ -3,7 +3,8 @@
 A single-file study suite for the Utah electrical and contractor licensing exams, served as a
 static page from this repo.
 
-**Live:** [longevexcoaching.github.io/utah-license-prep](https://longevexcoaching.github.io/utah-license-prep)
+**Live:** [mason-page.github.io/utah-license-prep](https://mason-page.github.io/utah-license-prep)  
+*(URL updated 2026-08-20 ahead of the `longevexcoaching` → `mason-page` account rename — see `brain/_shared/ACCOUNT-RENAME-RUNBOOK.md`. Until that rename is clicked, the old `longevexcoaching.github.io` address is the one that works.)*
 
 > **This repo is PUBLIC.** It serves the app via GitHub Pages, so everything committed here is
 > world-readable. Nothing sensitive goes in — no keys, no client material, no exam material that
